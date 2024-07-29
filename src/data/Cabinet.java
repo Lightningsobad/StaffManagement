@@ -1,4 +1,3 @@
-
 package data;
 
 import java.util.Scanner;
@@ -12,9 +11,6 @@ public class Cabinet {
     public Scanner sc = new Scanner(System.in);
     public NhanVien list[];
     public int soNhanVien;
-    
-//    public NhanVienSX list1[];
-//    public NhanVienVP list2[];
 
     public Cabinet() {
     }
@@ -26,17 +22,20 @@ public class Cabinet {
         NhanVien list[] = new NhanVien[soNhanVien];
         for (int i = 0; i < soNhanVien; i++) {
             System.out.println("Nhập nhân viên thứ " + (i + 1));
-            System.out.print("Nhập loại nhân viên(1. Nhân viên sản xuất, 2. Nhân viên văn phòng): ");
-            n = sc.nextInt();
+            do {
+                System.out.print("Nhập loại nhân viên(1. Nhân viên sản xuất, 2. Nhân viên văn phòng): ");
+                n = sc.nextInt();
+            } while (n != 1 && n != 2);
+
             if (n == 1) {
-                list[i] = new NhanVienSX();    
+                list[i] = new NhanVienSX();
             } else {
                 list[i] = new NhanVienVP();
             }
-            
+
             list[i].nhap();
-                       
-        }     
+
+        }
         NhanVien.inTieuDe();
         for (int i = 0; i < soNhanVien; i++) {
             list[i].inThongTin();
@@ -47,8 +46,7 @@ public class Cabinet {
             sum += list[i].tinhLuong() + list[i].tinhPhuCap();
         }
         System.out.println("Tổng tiền công ty phải trả cho nhân viên: " + sum);
-        
 
     }
-    
+
 }

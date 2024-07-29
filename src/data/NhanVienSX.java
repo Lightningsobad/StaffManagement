@@ -1,12 +1,13 @@
-
 package data;
 
 import java.util.*;
+
 /**
  *
  * @author quang
  */
-public class NhanVienSX extends NhanVien{
+public class NhanVienSX extends NhanVien {
+
     private int soSanPham;
 
     public NhanVienSX(int soSanPham, String hoTen, int namVaoLam) {
@@ -17,9 +18,7 @@ public class NhanVienSX extends NhanVien{
     public NhanVienSX() {
         super();
     }
-      
-    
-    
+
     @Override
     public void nhap() {
         super.nhap();
@@ -27,12 +26,10 @@ public class NhanVienSX extends NhanVien{
         System.out.print("Nhập số sản phẩm: ");
         soSanPham = sc.nextInt();
     }
-    
-    
-    
+
     @Override
     public double tinhLuong() {
         return soSanPham * 10000;
     }
-    
+
 }

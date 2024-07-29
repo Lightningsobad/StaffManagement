@@ -1,12 +1,13 @@
-
 package data;
+
 import java.util.*;
+
 /**
  *
  * @author quang
  */
-
 public class NhanVienVP extends NhanVien {
+
     private double mucLuong;
     private int soNgayNghi;
 
@@ -17,8 +18,7 @@ public class NhanVienVP extends NhanVien {
     public NhanVienVP() {
         super();
     }
-    
-    
+
     @Override
     public void nhap() {
         super.nhap();
@@ -28,14 +28,10 @@ public class NhanVienVP extends NhanVien {
         System.out.print("Nhập số ngày nghỉ: ");
         soNgayNghi = sc.nextInt();
     }
-            
-    
-    
-    
-    
+
     @Override
     public double tinhLuong() {
         return mucLuong - soNgayNghi * 10000;
     }
-    
+
 }
