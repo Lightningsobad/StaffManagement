@@ -1,16 +1,20 @@
+
 package data;
 
-import java.util.*;
+import java.util.Scanner;
 
 /**
  *
  * @author quang
  */
-public class NhanVienSX extends NhanVien {
-
+public class NhanVienSX extends NhanVien{
     private int soSanPham;
 
-    public NhanVienSX(int soSanPham, String hoTen, int namVaoLam) {
+    public NhanVienSX(int soSanPham) {
+        this.soSanPham = soSanPham;
+    }
+
+    public NhanVienSX(String hoTen, int namVaoLam, int soSanPham) {
         super(hoTen, namVaoLam);
         this.soSanPham = soSanPham;
     }
@@ -18,7 +22,7 @@ public class NhanVienSX extends NhanVien {
     public NhanVienSX() {
         super();
     }
-
+    
     @Override
     public void nhap() {
         super.nhap();
@@ -26,10 +30,14 @@ public class NhanVienSX extends NhanVien {
         System.out.print("Nhập số sản phẩm: ");
         soSanPham = sc.nextInt();
     }
+    
 
     @Override
     public double tinhLuong() {
         return soSanPham * 10000;
     }
-
+    
+    
+    
+    
 }
